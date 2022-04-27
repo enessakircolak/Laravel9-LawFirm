@@ -15,7 +15,7 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="{{asset('assets')}}/admin/css/style.css">
     <!-- endinject -->
-    <link rel="shortcut icon" href="images/favicon.png" />
+    <link rel="shortcut icon" href="{{asset('assets')}}/admin/images/favicon.png" />
 </head>
 <body>
 <div class="container-scroller">
@@ -103,7 +103,7 @@
                                 <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
                                 <a class="dropdown-item preview-item">
                                     <div class="preview-thumbnail">
-                                        <img src="images/faces/face4.jpg" alt="image" class="profile-pic">
+                                        <img src="{{asset('assets')}}/admin/images/faces/face4.jpg" alt="image" class="profile-pic">
                                     </div>
                                     <div class="preview-item-content flex-grow">
                                         <h6 class="preview-subject ellipsis font-weight-normal">David Grey
@@ -115,7 +115,7 @@
                                 </a>
                                 <a class="dropdown-item preview-item">
                                     <div class="preview-thumbnail">
-                                        <img src="images/faces/face2.jpg" alt="image" class="profile-pic">
+                                        <img src="{{asset('assets')}}/admin/images/faces/face2.jpg" alt="image" class="profile-pic">
                                     </div>
                                     <div class="preview-item-content flex-grow">
                                         <h6 class="preview-subject ellipsis font-weight-normal">Tim Cook
@@ -127,7 +127,7 @@
                                 </a>
                                 <a class="dropdown-item preview-item">
                                     <div class="preview-thumbnail">
-                                        <img src="images/faces/face3.jpg" alt="image" class="profile-pic">
+                                        <img src="{{asset('assets')}}/admin/images/faces/face3.jpg" alt="image" class="profile-pic">
                                     </div>
                                     <div class="preview-item-content flex-grow">
                                         <h6 class="preview-subject ellipsis font-weight-normal"> Johnson
@@ -154,8 +154,8 @@
                         </li>
                     </ul>
                     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                        <a class="navbar-brand brand-logo" href="index.html"><img src="images/logo.svg" alt="logo"/></a>
-                        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a>
+                        <a class="navbar-brand brand-logo" href="index.html"><img src="{{asset('assets')}}/admin/imagees/logo.svg" alt="logo"/></a>
+                        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{asset('assets')}}/admin/imagees/logo-mini.svg" alt="logo"/></a>
                     </div>
                     <ul class="navbar-nav navbar-nav-right">
                         <li class="nav-item dropdown  d-lg-flex d-none">
@@ -184,7 +184,7 @@
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
                                 <span class="nav-profile-name">Johnson</span>
                                 <span class="online-status"></span>
-                                <img src="images/faces/face28.png" alt="profile"/>
+                                <img src="{{asset('assets')}}/admin/images/faces/face28.png" alt="profile"/>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                                 <a class="dropdown-item">
@@ -385,7 +385,7 @@
                     <div class="col-lg-4 mb-3 mb-lg-0">
                         <div class="card congratulation-bg text-center">
                             <div class="card-body pb-0">
-                                <img src="images/dashboard/face29.png" alt="">
+                                <img src="{{asset('assets')}}/admin/images/dashboard/face29.png" alt="">
                                 <h2 class="mt-3 text-white mb-3 font-weight-bold">Congratulations
                                     Johnson
                                 </h2>
@@ -518,7 +518,7 @@
                                             </div>
                                             <div class="col-lg-4">
                                                 <div class="position-relative">
-                                                    <img src="images/dashboard/live.png" class="w-100" alt="">
+                                                    <img src="{{asset('assets')}}/admin/images/dashboard/live.png" class="w-100" alt="">
                                                     <div class="live-info badge badge-success">Live</div>
                                                 </div>
                                             </div>
@@ -721,23 +721,26 @@
 </div>
 <!-- container-scroller -->
 <!-- base:js -->
-<script src="vendors/base/vendor.bundle.base.js"></script>
+<script src="{{asset('assets')}}/admin/vendors/base/vendor.bundle.base.js"></script>
 <!-- endinject -->
 <!-- Plugin js for this page-->
 <!-- End plugin js for this page-->
 <!-- inject:js -->
-<script src="js/template.js"></script>
+<script src="{{asset('assets')}}/admin/js/template.js"></script>
 <!-- endinject -->
 <!-- plugin js for this page -->
 <!-- End plugin js for this page -->
-<script src="vendors/chart.js/Chart.min.js"></script>
-<script src="vendors/progressbar.js/progressbar.min.js"></script>
-<script src="vendors/chartjs-plugin-datalabels/chartjs-plugin-datalabels.js"></script>
-<script src="vendors/justgage/raphael-2.1.4.min.js"></script>
-<script src="vendors/justgage/justgage.js"></script>
-<script src="js/jquery.cookie.js" type="text/javascript"></script>
+<script src="{{asset('assets')}}/admin/vendors/chart.js/Chart.min.js"></script>
+<script src="{{asset('assets')}}/admin/vendors/progressbar.js/progressbar.min.js"></script>
+<script src="{{asset('assets')}}/admin/vendors/chartjs-plugin-datalabels/chartjs-plugin-datalabels.js"></script>
+<script src="{{asset('assets')}}/admin/vendors/justgage/raphael-2.1.4.min.js"></script>
+<script src="{{asset('assets')}}/admin/vendors/justgage/justgage.js"></script>
+<script src="{{asset('assets')}}/admin/js/jquery.cookie.js" type="text/javascript"></script>
 <!-- Custom js for this page-->
-<script src="js/dashboard.js"></script>
+<script src="{{asset('assets')}}/admin/js/dashboard.js"></script>
 <!-- End custom js for this page-->
+
+@yield('content')
+
 </body>
 </html>
