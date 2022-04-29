@@ -27,6 +27,16 @@ Route::get('/', function (){
 
 Route::get('/test/{id}',[HomeController::class, 'test'])->where('id', '[0-9]+')->name('test');
 
+Route::get('/about',[HomeController::class, 'about'])->name('about');
+Route::get('/service',[HomeController::class, 'service'])->name('service');
+Route::get('/team',[HomeController::class, 'team'])->name('team');
+Route::get('/portfolio',[HomeController::class, 'portfolio'])->name('portfolio');
+Route::get('/contact',[HomeController::class, 'contact'])->name('contact');
+Route::get('/blog',[HomeController::class, 'blog'])->name('blog');
+Route::get('/single',[HomeController::class, 'single'])->name('single');
+
+
+
 //admin
 Route::get('/admin', [\App\Http\Controllers\Admin\HomeController::class,'index'])->name('adminhome')->middleware('auth');
 
@@ -34,7 +44,20 @@ Route::get('/admin/login', [App\Http\Controllers\Admin\HomeController::class, 'l
 Route::post('/admin/logincheck', [App\Http\Controllers\Admin\HomeController::class, 'logincheck'])->name('admin_logincheck');
 Route::get('/admin/logout', [App\Http\Controllers\Admin\HomeController::class, 'logout'])->name('admin_logout');
 
+Route::middleware('auth')->prefix('admin')->group(function () {
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home');
+
+    Route::get('category', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_category');
+    Route::get('category/add', [App\Http\Controllers\Admin\HomeController::class, 'add'])->name('admin_category_add');
+    Route::get('category/update', [App\Http\Controllers\Admin\HomeController::class, 'update'])->name('admin_category_update');
+    Route::get('category/delete', [App\Http\Controllers\Admin\HomeController::class, 'destroy'])->name('admin_category_delete');
+    Route::get('category/show', [App\Http\Controllers\Admin\HomeController::class, 'show'])->name('admin_category_show');
+
+
+});
+
+
+    Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

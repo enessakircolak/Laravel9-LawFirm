@@ -32,6 +32,7 @@
                         <h4>Welcome back!</h4>
                         <h6 class="font-weight-light">Happy to see you again!</h6>
                         <form action="{{route('admin_logincheck') }}" method="post">
+                            @csrf
                        <!-- <form class="pt-3"> --->
                             <div class="form-group">
                                 <label for="exampleInputEmail">Username</label>
@@ -65,7 +66,7 @@
                                 <a href="#" class="auth-link text-black">Forgot password?</a>
                             </div>
                             <div class="my-3">
-                                <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">LOGIN</a>
+                                <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">Giriş</a>
                             </div>
                             <div class="mb-2 d-flex">
                                 <button type="button" class="btn btn-facebook auth-form-btn flex-grow me-1">

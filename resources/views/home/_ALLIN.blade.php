@@ -71,22 +71,22 @@
 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Practice</a>
-                        <a href="team.html" class="nav-item nav-link">Attorneys</a>
-                        <a href="portfolio.html" class="nav-item nav-link">Case Studies</a>
+                        <a href="{{ route('home') }}" class="nav-item nav-link active">Home</a>
+                        <a href="{{ route('about') }}"  class="nav-item nav-link active">About</a>
+                        <a href="{{ route('service') }}" class="nav-item nav-link">Practice</a>
+                        <a href="{{ route('team') }}" class="nav-item nav-link">Attorneys</a>
+                        <a href="{{ route('portfolio') }}" class="nav-item nav-link">Case Studies</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu">
-                                <a href="blog.html" class="dropdown-item">Blog Page</a>
-                                <a href="single.html" class="dropdown-item">Single Page</a>
+                                <a href="{{ route('blog') }}" class="dropdown-item">Blog Page</a>
+                                <a href="{{ route('single') }}" class="dropdown-item">Single Page</a>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>
                     </div>
                     <div class="ml-auto">
-                        <a class="btn" href="https://htmlcodex.com/law-firm-website-template">Get Appointment</a>
+                        <a class="btn" href="{{ route('contact') }}">Get Appointment</a>
                     </div>
                 </div>
             </nav>
