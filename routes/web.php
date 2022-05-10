@@ -35,7 +35,7 @@ Route::get('/contact',[HomeController::class, 'contact'])->name('contact');
 Route::get('/blog',[HomeController::class, 'blog'])->name('blog');
 Route::get('/single',[HomeController::class, 'single'])->name('single');
 
-
+//try
 
 //admin
 Route::get('/admin', [\App\Http\Controllers\Admin\HomeController::class,'index'])->name('adminhome')->middleware('auth');
