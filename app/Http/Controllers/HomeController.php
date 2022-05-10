@@ -62,7 +62,7 @@ class HomeController extends Controller
         }
         else
         {
-            return view('layouts.login');
+            return view('layouts.admin');
         }
     }
     public  function logout(Request $request)
