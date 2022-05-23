@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,24 +38,25 @@ Route::get('/single',[HomeController::class, 'single'])->name('single');
 //try
 
 //admin
-Route::get('/admin', [\App\Http\Controllers\Admin\HomeController::class,'index'])->name('adminhome')->middleware('auth');
+//Route::get('/admin', [AdminHomeController::class,'index'])->name('adminhome')->middleware('auth')
+Route::get('/admin', [AdminHomeController::class,'index'])->name('adminhome');
 
-Route::get('/admin/login', [App\Http\Controllers\Admin\HomeController::class, 'login'])->name('admin_login');
-Route::post('/admin/logincheck', [App\Http\Controllers\Admin\HomeController::class, 'logincheck'])->name('admin_logincheck');
-Route::get('/admin/logout', [App\Http\Controllers\Admin\HomeController::class, 'logout'])->name('admin_logout');
+Route::get('/admin/login', [AdminHomeController::class, 'login'])->name('admin_login');
+Route::post('/admin/logincheck', [AdminHomeController::class, 'logincheck'])->name('admin_logincheck');
+Route::get('/admin/logout', [AdminHomeController::class, 'logout'])->name('admin_logout');
 
-Route::middleware('auth')->prefix('admin')->group(function () {
+//Route::middleware('auth')->prefix('admin')->group(function () {
 
-    Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home');
+    Route::get('/', [AdminHomeController::class, 'index'])->name('admin_home');
 
-    Route::get('category', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_category');
-    Route::get('category/add', [App\Http\Controllers\Admin\HomeController::class, 'add'])->name('admin_category_add');
-    Route::get('category/update', [App\Http\Controllers\Admin\HomeController::class, 'update'])->name('admin_category_update');
-    Route::get('category/delete', [App\Http\Controllers\Admin\HomeController::class, 'destroy'])->name('admin_category_delete');
-    Route::get('category/show', [App\Http\Controllers\Admin\HomeController::class, 'show'])->name('admin_category_show');
+    Route::get('category', [AdminHomeController::class, 'index'])->name('admin_category');
+    Route::get('category/add', [AdminHomeController::class, 'add'])->name('admin_category_add');
+    Route::get('category/update', [AAdminHomeController::class, 'update'])->name('admin_category_update');
+    Route::get('category/delete', [AdminHomeController::class, 'destroy'])->name('admin_category_delete');
+    Route::get('category/show', [AdminHomeController::class, 'show'])->name('admin_category_show');
 
 
-});
+//});
 
 
     Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

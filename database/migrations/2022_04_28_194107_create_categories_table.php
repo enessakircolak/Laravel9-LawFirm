@@ -21,8 +21,9 @@ return new class extends Migration
             $table->string('description')->nullable();
             $table->string('image',100)->nullable();
             $table->string('slug',100)->nullable();
-            $table->string('status',5)->nullable()->default('false');
-            $table->timestamps();
+            $table->string('status', 5)->nullable();
+            $table->timestamp('updated_at')->useCurrent();
+            $table->timestamp('created_at')->useCurrent();
         });
     }
 
