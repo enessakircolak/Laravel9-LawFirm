@@ -46,12 +46,15 @@ Route::post('/admin/logincheck', [AdminHomeController::class, 'logincheck'])->na
 Route::get('/admin/logout', [AdminHomeController::class, 'logout'])->name('admin_logout');
 
 //Route::middleware('auth')->prefix('admin')->group(function () {
+// admin category
+
+Route::get('/admin/category/create', [App\Http\Controllers\Admin\CategoryController::class,'create'])->name('admin_category_create');
 
     Route::get('/', [AdminHomeController::class, 'index'])->name('admin_home');
 
     Route::get('category', [AdminHomeController::class, 'index'])->name('admin_category');
     Route::get('category/add', [AdminHomeController::class, 'add'])->name('admin_category_add');
-    Route::get('category/update', [AAdminHomeController::class, 'update'])->name('admin_category_update');
+    Route::get('category/update', [AdminHomeController::class, 'update'])->name('admin_category_update');
     Route::get('category/delete', [AdminHomeController::class, 'destroy'])->name('admin_category_delete');
     Route::get('category/show', [AdminHomeController::class, 'show'])->name('admin_category_show');
 
