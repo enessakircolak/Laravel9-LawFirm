@@ -48,6 +48,7 @@ Route::get('/admin/logout', [AdminHomeController::class, 'logout'])->name('admin
 //Route::middleware('auth')->prefix('admin')->group(function () {
 // admin category
 
+Route::get('/admin/category', [App\Http\Controllers\Admin\CategoryController::class,'index'])->name('admin_category');
 Route::get('/admin/category/create', [App\Http\Controllers\Admin\CategoryController::class,'create'])->name('admin_category_create');
 
     Route::get('/', [AdminHomeController::class, 'index'])->name('admin_home');

@@ -31,7 +31,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        echo ("category list");
     }
 
     /**
@@ -41,7 +41,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        echo ("created");
+        return view('layouts.category.create');
     }
 
     /**
