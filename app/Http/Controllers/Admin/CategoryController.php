@@ -32,7 +32,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        echo ("category list");
+        return view("layouts.category.index");
     }
 
     /**
@@ -63,7 +63,7 @@ class CategoryController extends Controller
         $data->status = $request->status ;
         //$request->status;
         $data->save();
-
+        return  redirect('admin/category');
 
     }
 

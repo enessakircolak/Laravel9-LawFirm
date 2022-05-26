@@ -81,6 +81,18 @@
                         <label for="exampleInputEmail2">Description</label>
                         <input type="text" class="form-control" id=exampleInputEmail2 name="description" placeholder="Description" required="required">
                     </div>
+                    <div class="form-group">
+                        <label for="exampleInputFile">File input</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="exampleInputFile">
+                                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                            </div>
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="">Upload</span>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="form-group">
                         <label>Status</label>
