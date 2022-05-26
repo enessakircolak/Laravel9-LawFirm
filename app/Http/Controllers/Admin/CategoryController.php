@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use phpDocumentor\Reflection\Types\True_;
 
 class CategoryController extends Controller
 {
@@ -52,7 +53,18 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+        $data=new Category();
+        $data->parent_id = 0;
+        $data->title = $request->title;
+        $data->keywords = $request->keywords;
+        $data->description =$request->description;
+        $data->status = $request->status ;
+        //$request->status;
+        $data->save();
+
+
     }
 
     /**
