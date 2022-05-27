@@ -6,6 +6,8 @@
 
 @section('content')
 
+
+    <td><a href="/admin/category/create"> <button type="button" class="btn btn-success btn-lg">Create</button></a> </td>
     <div class="table-responsive">
         <table class="table">
             <thead>
@@ -22,18 +24,30 @@
             </tr>
             </thead>
             <tbody>
+            @foreach( $data as $rs)
             <tr>
-                <td>Jacob</td>
-                <td>53275531</td>
-                <td>12 May 2017</td>
-                <td><label class="badge badge-danger">Pending</label></td>
+                <td>{{$rs->id}}</td>
+                <td>{{$rs->title}}</td>
+                <td>{{$rs->keywords}}</td>
+                <td>{{$rs->description}}</td>
+                <td>{{$rs->image}}</td>
+                <td>{{$rs->status}}</td>
+                <td><a href="/admin/category/edit/{{$rs->id}}"> <button type="button" class="btn btn-primary btn-sm">Edit</button></a> </td>
+                <td><a href="/admin/category/delete/{{$rs->id}}"><button type="button" class="btn btn-danger btn-sm">Delete</button></a> </td>
+                   <!--     onclick="return confirm('Deleting !! Are you sure?')">Delete</a> </td>-->
+                <td><a href="/admin/category/show/{{$rs->id}}"><button type="button" class="btn btn-success btn-sm">Show</button></a> </td>
+
+
+
+                <!-- <td><label class="badge badge-danger">Pending</label></td>
                 <td><label class="badge badge-warning">Pending</label></td>
                 <td><label class="badge badge-success">Pending</label></td>
                 <td><label class="badge badge-info">Pending</label></td>
                 <td>yes</td>
                 <td>no</td>
+                -->
             </tr>
-
+            @endforeach
             </tbody>
         </table>
     </div>

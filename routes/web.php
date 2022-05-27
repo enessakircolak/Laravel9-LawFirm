@@ -3,6 +3,8 @@
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
+use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,17 +50,27 @@ Route::get('/admin/logout', [AdminHomeController::class, 'logout'])->name('admin
 //Route::middleware('auth')->prefix('admin')->group(function () {
 // admin category
 
-Route::get('/admin/category', [App\Http\Controllers\Admin\CategoryController::class,'index'])->name('admin_category');
-Route::get('/admin/category/create', [App\Http\Controllers\Admin\CategoryController::class,'create'])->name('admin_category_create');
-Route::post('/admin/category/store', [App\Http\Controllers\Admin\CategoryController::class,'store'])->name('admin_category_store');
+Route::get('/admin/category', [AdminCategoryController::class,'index'])->name('admin_category');
+Route::get('/admin/category/create', [AdminCategoryController::class,'create'])->name('admin_category_create');
+Route::post('/admin/category/store', [AdminCategoryController::class,'store'])->name('admin_category_store');
+Route::get('/admin/category/edit/{id}', [AdminCategoryController::class,'edit'])->name('admin_category_edit');
+Route::post('/admin/category/update/{id}', [AdminCategoryController::class,'update'])->name('admin_category_update');
+Route::post('/admin/category/destroy/{id}', [AdminCategoryController::class,'destroy'])->name('admin_category_destroy');
+Route::get('/admin/category/show/{id}', [AdminCategoryController::class,'show'])->name('admin_category_show');
+
+
+
+
+
+
 
     Route::get('/', [AdminHomeController::class, 'index'])->name('admin_home');
 
-    Route::get('category', [AdminHomeController::class, 'index'])->name('admin_category');
-    Route::get('category/add', [AdminHomeController::class, 'add'])->name('admin_category_add');
-    Route::get('category/update', [AdminHomeController::class, 'update'])->name('admin_category_update');
-    Route::get('category/delete', [AdminHomeController::class, 'destroy'])->name('admin_category_delete');
-    Route::get('category/show', [AdminHomeController::class, 'show'])->name('admin_category_show');
+    Route::get('category', [AdminCategoryController::class, 'index'])->name('admin_category');
+    Route::get('category/add', [AdminCategoryController::class, 'add'])->name('admin_category_add');
+    Route::get('category/update', [AdminCategoryController::class, 'update'])->name('admin_category_update');
+    Route::get('category/delete', [AdminCategoryController::class, 'destroy'])->name('admin_category_delete');
+    Route::get('category/show', [AdminCategoryController::class, 'show'])->name('admin_category_show');
 
 
 //});

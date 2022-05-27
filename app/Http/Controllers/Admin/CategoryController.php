@@ -32,7 +32,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view("layouts.category.index");
+        $data = Category::all();
+        return view("layouts.category.index",[
+            'data'=> $data
+        ]);
     }
 
     /**
@@ -44,6 +47,15 @@ class CategoryController extends Controller
     {
         return view('layouts.category.create');
     }
+
+    public function edit(Category $category,$id){
+
+        $data = Category::find($id);
+        return view("layouts.category.edit",[
+            'data'=> $data
+        ]);
+    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -73,10 +85,9 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, Category $category)
+    public function show(Request $request, Category $category,$id)
     {
-        $categories = Category::with('children')->get();
-        return view('admin.admin_categories', ['categories' => $categories]);
+       echo ("sa");
     }
 
     /**
@@ -94,7 +105,7 @@ class CategoryController extends Controller
         return view('admin.category_edit', ['user' => $user, 'data' => $data, 'category' => $category]);
     }
 
-    public function edit(Request $request, Category $category, $id)
+ /*   public function edit(Request $request, Category $category, $id)
     {
         $validation = $request->validate([
             'title' => 'required',
@@ -112,7 +123,7 @@ class CategoryController extends Controller
             ->update(['parent_id' => $parent_id, 'title' => $title, 'keywords' => $keywords, 'description' => $description, 'slug' => $slug, 'status' => $status]);
         return redirect()->route('admin_panel_categories')->with('success', 'Category Updated');
     }
-
+*/
     public function show_adding(Request $request, Category $category)
     {
         $user = $request->session()->get('user_id');
@@ -151,9 +162,18 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, Category $category,$id)
     {
-        //
+
+        $data = Category::find($id);
+        $data->parent_id = 0;
+        $data->title = $request->title;
+        $data->keywords = $request->keywords;
+        $data->description =$request->description;
+        $data->status = $request->status ;
+        //$request->status;
+        $data->save();
+        return  redirect('admin/category');
     }
 
     /**
