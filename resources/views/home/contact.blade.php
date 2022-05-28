@@ -146,22 +146,34 @@
                         </div>
                         <div class="col-md-6">
                             <div class="contact-form">
-                                <form>
+                               <h1>{{Session::get('info')}}</h1>
+                                <form id="checkout-form" action="{{route("storemessage")}}" class="clearfix" method="post">
+                                   @csrf
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Your Name" required="required" />
+                                        <input type="text" class="input" name="name" placeholder="name & surname" required="required" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Your Email" required="required" />
+                                        <input type="tel" class="input" name="phone" placeholder="Phone Number" required="required" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Subject" required="required" />
+                                        <input type="email" class="input" name="email" placeholder="Email" required="required" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="text" class="input" name="subject"  placeholder="Subject" required="required" />
                                     </div>
                                     <div class="form-group">
-                                        <textarea class="form-control" placeholder="Message" required="required" ></textarea>
+                                        <textarea type="text" class="input" name="message" placeholder="your message" required="required" ></textarea>
                                     </div>
-                                    <div>
+
+
+                                    <div class="form-group">
+                                        <input class="input" type="submit" value="Send Message"  />
+                                    </div>
+                                  <!--  <div>
                                         <button class="btn" type="submit">Send Message</button>
                                     </div>
+                                    -->
                                 </form>
                             </div>
                         </div>

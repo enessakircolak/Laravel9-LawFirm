@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\comments;
+use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,10 +31,7 @@ class HomeController extends Controller
     {
         return view('home.portfolio');
     }
-    public function contact()
-    {
-        return view('home.contact');
-    }
+
     public function single()
     {
         return view('home.single');
@@ -40,6 +39,25 @@ class HomeController extends Controller
     public function blog()
     {
         return view('home.blog');
+    }
+    public function contact()
+    {
+        return view('home.contact');
+    }
+
+    public function storemessage(Request $request)
+    {
+        //dd($request);
+        $data = new comments();
+        $data->name = $request->input('name');
+        $data->email = $request->input('email');
+        $data->phone = $request->input('phone');
+        $data->subject = $request->input('subject');
+        $data->message = $request->input('message');
+        $data->ip=request()->ip();
+        $data->save();
+
+        return redirect()->route('contact')->with('info','mesajınız yollandı , teşekkürler');
     }
 
     public function login()

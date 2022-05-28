@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('messages', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('name',50)->nullable();
             $table->string("email",50)->nullable();
@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string("subject",100)->nullable();
             $table->string("message")->nullable();
             $table->string("note",100)->nullable();
+            $table->string("Ip",50)->nullable();
             $table->string("status",5)->nullable()->default('New');
             $table->timestamps();
         });
@@ -33,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('messages');
+        Schema::dropIfExists('comments');
     }
 };

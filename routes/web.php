@@ -33,9 +33,10 @@ Route::get('/about',[HomeController::class, 'about'])->name('about');
 Route::get('/service',[HomeController::class, 'service'])->name('service');
 Route::get('/team',[HomeController::class, 'team'])->name('team');
 Route::get('/portfolio',[HomeController::class, 'portfolio'])->name('portfolio');
-Route::get('/contact',[HomeController::class, 'contact'])->name('contact');
 Route::get('/blog',[HomeController::class, 'blog'])->name('blog');
 Route::get('/single',[HomeController::class, 'single'])->name('single');
+Route::get('/contact',[HomeController::class, 'contact'])->name('contact');
+Route::post('/storemessage',[HomeController::class, 'storemessage'])->name('storemessage');
 
 //try
 
