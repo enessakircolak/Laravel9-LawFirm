@@ -45,6 +45,13 @@ class HomeController extends Controller
         return view('home.contact');
     }
 
+
+
+
+    public function appointment()
+    {
+        return view('home.appointment');
+    }
     public function storemessage(Request $request)
     {
         //dd($request);
@@ -60,10 +67,10 @@ class HomeController extends Controller
         return redirect()->route('contact')->with('info','mesajınız yollandı , teşekkürler');
     }
 
-    public function login()
-    {
-        return view('layouts.login');
-    }
+   // public function login()
+   // {
+    //    return view('layouts.login');
+    //}
     public function logincheck(Request $request)
     {
         if ($request->isMethod('post'))

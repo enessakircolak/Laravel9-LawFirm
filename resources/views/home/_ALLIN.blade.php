@@ -33,7 +33,7 @@
                     <div class="logo">
                         <a href="index.html">
                             <h1>Kanun</h1>
-                        <!-- <img src="{{asset('assets')}}/img/logo.jpg" alt="Logo"> -->
+                        <!-- <img src="{ {asset('assets')}}/img/logo.jpg" alt="Logo"> -->
                         </a>
                     </div>
                 </div>
@@ -52,6 +52,7 @@
                             <a href=""><i class="fab fa-facebook-f"></i></a>
                             <a href=""><i class="fab fa-linkedin-in"></i></a>
                             <a href=""><i class="fab fa-instagram"></i></a>
+                            <a href="{{ route('login') }}" >Login</a>
                         </div>
                     </div>
                 </div>
@@ -86,7 +87,7 @@
                         <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>
                     </div>
                     <div class="ml-auto">
-                        <a class="btn" href="{{ route('contact') }}">Get Appointment</a>
+                        <a class="btn" href="{{ route('appointment') }}">Get Appointment</a>
                     </div>
                 </div>
             </nav>

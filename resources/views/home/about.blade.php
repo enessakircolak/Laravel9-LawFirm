@@ -87,7 +87,7 @@
                                 <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>
                             </div>
                             <div class="ml-auto">
-                                <a class="btn" href="{{ route('contact') }}">Get Appointment</a>
+                                <a class="btn" href="{{ route('appointment') }}">Get Appointment</a>
                             </div>
                         </div>
                     </nav>

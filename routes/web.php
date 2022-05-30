@@ -4,7 +4,7 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
-
+use App\Http\Controllers\Admin\MessageController as MessageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,8 +36,10 @@ Route::get('/portfolio',[HomeController::class, 'portfolio'])->name('portfolio')
 Route::get('/blog',[HomeController::class, 'blog'])->name('blog');
 Route::get('/single',[HomeController::class, 'single'])->name('single');
 Route::get('/contact',[HomeController::class, 'contact'])->name('contact');
+Route::get('/appointment',[HomeController::class, 'appointment'])->name('appointment');
 Route::post('/storemessage',[HomeController::class, 'storemessage'])->name('storemessage');
-
+Route::view('/login','home.login')->name('login');
+Route::view('/loginBlank','home.loginBlank');
 //try
 
 //admin
@@ -65,15 +67,26 @@ Route::get('/admin/category/show/{id}', [AdminCategoryController::class,'show'])
 
 
 
-    Route::get('/', [AdminHomeController::class, 'index'])->name('admin_home');
 
-    Route::get('category', [AdminCategoryController::class, 'index'])->name('admin_category');
-    Route::get('category/add', [AdminCategoryController::class, 'add'])->name('admin_category_add');
-    Route::get('category/update', [AdminCategoryController::class, 'update'])->name('admin_category_update');
-    Route::get('category/delete', [AdminCategoryController::class, 'destroy'])->name('admin_category_delete');
-    Route::get('category/show', [AdminCategoryController::class, 'show'])->name('admin_category_show');
+  //  Route::get('category', [AdminCategoryController::class, 'index'])->name('admin_category');
+ //   Route::get('category/add', [AdminCategoryController::class, 'add'])->name('admin_category_add');
+  //  Route::get('category/update', [AdminCategoryController::class, 'update'])->name('admin_category_update');
+  //  Route::get('category/delete', [AdminCategoryController::class, 'destroy'])->name('admin_category_delete');
+  //  Route::get('category/show', [AdminCategoryController::class, 'show'])->name('admin_category_show');
 
 
+    Route::get('/message', [MessageController::class, 'index'])->name('admin_message');
+
+    // *****ADMIN****
+Route::prefix('/admin')->name('admin.')->group(function (){
+
+
+        Route::prefix('/message')->name('message.')->controller(MessageController::class)->group(function (){
+            Route::get('/','index')->name('index');
+            Route::get('/destroy/{id}','destroy')->name('destroy');
+
+        });
+});
 //});
 
 
