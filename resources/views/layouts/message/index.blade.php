@@ -7,37 +7,46 @@
 @section('content')
 
 
-    <td><a href="/admin/category/create"> <button type="button" class="btn btn-success btn-lg">Create</button></a> </td>
     <div class="table-responsive">
         <table class="table">
             <thead>
             <tr>
+                <th>id</th>
                 <th>name</th>
-                <th>Phone</th>
-                <th>Email</th>
-                <th>Subject</th>
-                <th>Status</th>
-                <th style="width: 40px">Delete</th>
-                <th style="width: 40px">Show</th>
+                <th>email</th>
+                <th>phone</th>
+                <th>subject</th>
+                <th>message</th>
+                <th>ip</th>
             </tr>
             </thead>
-            <tbody>
             @foreach( $data as $rs)
-            <tr>
-                <td>{{$rs->id}}</td>
-                <td>{{$rs->name}}</td>
-                <td>{{$rs->phone}}</td>
-                <td>{{$rs->email}}</td>
-                <td>{{$rs->subject}}</td>
-                <td>{{$rs->status}}</td>
-                <td><a href="{{route('layouts.message.show',['id'=>$rs->id])}}"
-                       onclick="return !window.open(this.href, '' , 'top=50 left=100 width=1100 , height=700')">
-                        Show
-                    </a>
-                    <td><a href="[[route('layouts.message.destroy',['id'=>$rs->id])}}" class="btn btn-block btn-danger btn-sm"
-                        onclick="return confirm('Deleting !! are you sure?')">Delete</a>
+                <tr>
+                    <td>{{$rs->id}}</td>
+                    <td>{{$rs->name}}</td>
+                    <td>{{$rs->email}}</td>
+                    <td>{{$rs->phone}}</td>
+                    <td>{{$rs->subject}}</td>
+                    <td>{{$rs->message}}</td>
+                    <td>{{$rs->ip}}</td>
 
-                </td>
+
+
+                    <!-- <td><label class="badge badge-danger">Pending</label></td>
+                    <td><label class="badge badge-warning">Pending</label></td>
+                    <td><label class="badge badge-success">Pending</label></td>
+                    <td><label class="badge badge-info">Pending</label></td>
+                    <td>yes</td>
+                    <td>no</td>
+                    -->
+                </tr>
+            @endforeach
+
+
+
+            <tbody>
+
+
 
 
 
@@ -47,9 +56,7 @@
                 <td><label class="badge badge-info">Pending</label></td>
                 <td>yes</td>
                 <td>no</td>
-                -->
-            </tr>
-            @endforeach
+
             </tbody>
         </table>
     </div>

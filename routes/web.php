@@ -75,7 +75,6 @@ Route::get('/admin/category/show/{id}', [AdminCategoryController::class,'show'])
   //  Route::get('category/show', [AdminCategoryController::class, 'show'])->name('admin_category_show');
 
 
-    Route::get('/message', [MessageController::class, 'index'])->name('admin_message');
 
     // *****ADMIN****
 Route::prefix('/admin')->name('admin.')->group(function (){
