@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\MessageController as MessageController;
+use App\Http\Controllers\Admin\AppointmentController as AppointmentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,6 +39,7 @@ Route::get('/single',[HomeController::class, 'single'])->name('single');
 Route::get('/contact',[HomeController::class, 'contact'])->name('contact');
 Route::get('/appointment',[HomeController::class, 'appointment'])->name('appointment');
 Route::post('/storemessage',[HomeController::class, 'storemessage'])->name('storemessage');
+Route::post('/storeappointment',[HomeController::class, 'storeappointment'])->name('storeappointment');
 Route::view('/login','home.login')->name('login');
 Route::view('/loginBlank','home.loginBlank');
 //try
@@ -61,6 +63,9 @@ Route::post('/admin/category/update/{id}', [AdminCategoryController::class,'upda
 Route::post('/admin/category/destroy/{id}', [AdminCategoryController::class,'destroy'])->name('admin_category_destroy');
 Route::get('/admin/category/show/{id}', [AdminCategoryController::class,'show'])->name('admin_category_show');
 
+// appointment
+
+Route::get('/admin/appointment', [AppointmentController::class,'index'])->name('admin_appointment');
 
 
 

@@ -100,7 +100,7 @@
             <div class="contact">
                 <div class="container">
                     <div class="section-header">
-                        <h2>Contact Us</h2>
+                        <h2>Get Appointment</h2>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
@@ -130,20 +130,21 @@
                         </div>
                         <div class="col-md-6">
                             <div class="contact-form">
-                            <!-- @include('home.messages')-->
-                                <form id="checkout-form" action="{{route("storemessage")}}" class="clearfix" method="post">
+                                @include('home.messages')
+                                <form id="checkout-form" action="{{route("storeappointment")}}" class="clearfix" method="post">
                                     @csrf
                                     <div class="form-group">
-                                        <input type="text" class="input" name="attorney" placeholder="attorney" required="required" />
+                                        <input type="text" class="input" name="Law" placeholder="Law" required="required" /> (civil,education,cyber,family,business,criminal)
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="tel" pattern="[0-9]{10}" class="input" name="Phone" placeholder="Phone number" required="required" /> (+90) 123 456 78 90
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="input" name="email" placeholder="Email" required="required" />
+                                        <input type="text" pattern="[0-9]{2}" class="input" name="Time"  placeholder="Time" required="required" /> 8-16(45min. per appointment)
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="input" name="subject"  placeholder="time" required="required" />
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea type="text" class="input" name="time" placeholder="Subject" required="required" ></textarea>
+                                        <textarea type="text" class="input" name="Subject" placeholder="Explain problem shortly for preliminary research" required="required" ></textarea>
                                     </div>
 
 

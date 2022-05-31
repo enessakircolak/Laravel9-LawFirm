@@ -16,7 +16,6 @@
                 <th>Title</th>
                 <th>Keywords</th>
                 <th>Description</th>
-                <th>Image</th>
                 <th>Status</th>
                 <th>Edit</th>
                 <th>Delete</th>
@@ -30,7 +29,6 @@
                 <td>{{$rs->title}}</td>
                 <td>{{$rs->keywords}}</td>
                 <td>{{$rs->description}}</td>
-                <td>{{$rs->image}}</td>
                 <td>{{$rs->status}}</td>
                 <td><a href="/admin/category/edit/{{$rs->id}}"> <button type="button" class="btn btn-primary btn-sm">Edit</button></a> </td>
                 <td><a href="/admin/category/delete/{{$rs->id}}"><button type="button" class="btn btn-danger btn-sm">Delete</button></a> </td>

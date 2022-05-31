@@ -17,7 +17,7 @@
                 <th>phone</th>
                 <th>subject</th>
                 <th>message</th>
-                <th>ip</th>
+
             </tr>
             </thead>
             @foreach( $data as $rs)
@@ -28,7 +28,7 @@
                     <td>{{$rs->phone}}</td>
                     <td>{{$rs->subject}}</td>
                     <td>{{$rs->message}}</td>
-                    <td>{{$rs->ip}}</td>
+
 
 
 

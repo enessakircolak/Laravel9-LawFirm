@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
 use App\Models\comments;
 use App\Models\Message;
 use Illuminate\Http\Request;
@@ -52,6 +53,19 @@ class HomeController extends Controller
     {
         return view('home.appointment');
     }
+    public function storeappointment(Request $request)
+    {
+        //dd($request);
+        $data = new appointment();
+        $data->Law = $request->input('Law');
+        $data->Phone = $request->input('Phone');
+        $data->Time = $request->input('Time');
+        $data->Subject = $request->input('Subject');
+        $data->save();
+
+        return redirect()->route('appointment')->with('info','Randevu talebiniz alınmıştır , teşekkürler');
+    }
+
     public function storemessage(Request $request)
     {
         //dd($request);
