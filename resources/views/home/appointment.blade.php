@@ -141,7 +141,7 @@
                                         <input type="tel" pattern="[0-9]{10}" class="input" name="Phone" placeholder="Phone number" required="required" /> (+90) 123 456 78 90
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" pattern="[0-9]{2}" class="input" name="Time"  placeholder="Time" required="required" /> 8-16(45min. per appointment)
+                                        <input type="text" pattern="[0-9,:]{8}" class="input" name="Time"  placeholder="Time" required="required" /> day:month:hour 8-20(45min. per appointment)
                                     </div>
                                     <div class="form-group">
                                         <textarea type="text" class="input" name="Subject" placeholder="Explain problem shortly for preliminary research" required="required" ></textarea>

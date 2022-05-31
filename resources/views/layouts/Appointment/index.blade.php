@@ -19,10 +19,10 @@
             @foreach( $data as $rs)
 
                 <tr>
-                    <td>{{$rs->law}}</td>
-                    <td>{{$rs->phone}}</td>
-                    <td>{{$rs->time}}</td>
-                    <td>{{$rs->subject}}</td>
+                    <td>{{$rs->Law}}</td>
+                    <td>{{$rs->Phone}}</td>
+                    <td>{{$rs->Time}}</td>
+                    <td>{{$rs->Subject}}</td>
 
 
 
