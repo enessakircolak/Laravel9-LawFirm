@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Appointment;
 use App\Models\comments;
 use App\Models\Message;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Throwable;
 
 class HomeController extends Controller
 {
@@ -55,14 +57,21 @@ class HomeController extends Controller
     }
     public function storeappointment(Request $request)
     {
-        //dd($request);
-        $data = new appointment();
-        $data->Law = $request->input('Law');
-        $data->Phone = $request->input('Phone');
-        $data->Time = $request->input('Time');
-        $data->Subject = $request->input('Subject');
-        $data->save();
 
+        try {
+
+            //dd($request);
+            $data = new appointment();
+            $data->Law = $request->input('Law');
+            $data->Phone = $request->input('Phone');
+            $data->Time = $request->input('Time');
+            $data->Subject = $request->input('Subject');
+            $data->save();
+        }
+        catch (Throwable $e) {
+
+                return redirect()->route('appointment')->with('warning','Randevu talebiniz alınamadı , tarihi dolu');
+            }
         return redirect()->route('appointment')->with('info','Randevu talebiniz alınmıştır , teşekkürler');
     }
 
