@@ -19,7 +19,7 @@
                 <th>Status</th>
                 <th>Edit</th>
                 <th>Delete</th>
-                <th>Show</th>
+
             </tr>
             </thead>
             <tbody>
@@ -31,10 +31,13 @@
                 <td>{{$rs->description}}</td>
                 <td>{{$rs->status}}</td>
                 <td><a href="/admin/category/edit/{{$rs->id}}"> <button type="button" class="btn btn-primary btn-sm">Edit</button></a> </td>
-                <td><a href="/admin/category/delete/{{$rs->id}}"><button type="button" class="btn btn-danger btn-sm">Delete</button></a> </td>
-                   <!--     onclick="return confirm('Deleting !! Are you sure?')">Delete</a> </td>-->
-                <td><a href="/admin/category/show/{{$rs->id}}"><button type="button" class="btn btn-success btn-sm">Show</button></a> </td>
-
+                <form action="{{ route('admin_category_destroy', $rs->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <td>
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </td>
+                </form>
 
 
                 <!-- <td><label class="badge badge-danger">Pending</label></td>

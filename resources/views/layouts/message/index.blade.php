@@ -17,6 +17,7 @@
                 <th>phone</th>
                 <th>subject</th>
                 <th>message</th>
+                <th>Delete</th>
 
             </tr>
             </thead>
@@ -62,7 +63,6 @@
     </div>
 
 
-<!--
   partial
 
     <div class="content-wrapper">

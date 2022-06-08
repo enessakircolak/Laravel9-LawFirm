@@ -14,6 +14,8 @@
                 <th>Phone</th>
                 <th>Time</th>
                 <th>Subject</th>
+                <th>Delete</th>
+
             </tr>
             </thead>
             @foreach( $data as $rs)
@@ -23,6 +25,13 @@
                     <td>{{$rs->Phone}}</td>
                     <td>{{$rs->Time}}</td>
                     <td>{{$rs->Subject}}</td>
+                    <form action="{{ route('admin_appointment_destroy', $rs->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <td>
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </td>
+                    </form>
 
 
 

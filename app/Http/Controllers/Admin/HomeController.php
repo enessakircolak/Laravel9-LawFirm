@@ -17,8 +17,11 @@ class HomeController extends Controller
     {
         return view('layouts.login');
     }
+    public function setting()
+    {
 
-
+        return view('layouts.setting');
+    }
 
 }
 

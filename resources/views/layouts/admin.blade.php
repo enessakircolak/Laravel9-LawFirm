@@ -285,6 +285,12 @@
         </nav>
     </div>
 
+    <td><a href="/admin"> <button type="button" class="btn btn-behance btn-sm">Home</button></a> </td>
+    <td><a href="/admin/category"> <button type="button" class="btn btn-primary btn-sm">Category</button></a> </td>
+    <td><a href="/admin/message"> <button type="button" class="btn btn-success btn-sm">Messages</button></a> </td>
+    <td><a href="/admin/appointment"> <button type="button" class="btn btn-warning btn-sm">Appointment</button></a> </td>
+    <td><a href="/admin/setting"> <button type="button" class="btn btn-dark btn-sm">Setting</button></a> </td>
+
             <footer class="footer">
                 <div class="footer-wrap">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
@@ -319,6 +325,7 @@
 <!-- Custom js for this page-->
 <script src="{{asset('assets')}}/admin/js/dashboard.js"></script>
 <!-- End custom js for this page-->
+
 
 @yield('content')
 
