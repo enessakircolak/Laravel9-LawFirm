@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Kanun - Law Firm Website </title>
+    <title>Kanun - Law Firm Website Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Law Firm Website Template" name="keywords">
     <meta content="Law Firm Website Template" name="description">
@@ -21,7 +20,7 @@
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="{{asset('assets')}}/css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -34,7 +33,7 @@
                     <div class="logo">
                         <a href="index.html">
                             <h1>Kanun</h1>
-                            <!-- <img src="img/logo.jpg" alt="Logo"> -->
+                            <!-- <img src="{ {asset('assets')}}/img/logo.jpg" alt="Logo"> -->
                         </a>
                     </div>
                 </div>
@@ -53,6 +52,7 @@
                             <a href=""><i class="fab fa-facebook-f"></i></a>
                             <a href=""><i class="fab fa-linkedin-in"></i></a>
                             <a href=""><i class="fab fa-instagram"></i></a>
+                            <a href="{{ route('login') }}" >Login</a>
                         </div>
                     </div>
                 </div>
@@ -84,7 +84,7 @@
                                 <a href="{{ route('single') }}" class="dropdown-item">Single Page</a>
                             </div>
                         </div>
-                        <a href="{{ route('contact') }}" class="nav-item nav-link active">Contact</a>
+                        <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>
                     </div>
                     <div class="ml-auto">
                         <a class="btn" href="{{ route('appointment') }}">Get Appointment</a>
@@ -96,35 +96,14 @@
     <!-- Nav Bar End -->
 
 
-    <!-- Page Header Start -->
-    <div class="page-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2>Login</h2>
-                </div>
-                <div class="col-12">
-                    <a href="">Home</a>
-                    <a href=""> Login </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Page Header End -->
 
 
-    <!-- Login Start -->
-    <div class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- @ include('auth.login') -->
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Login End -->
+
+
+
+
+
 
 
     <!-- Newsletter Start -->
@@ -228,7 +207,6 @@
 <script src="lib/isotope/isotope.pkgd.min.js"></script>
 
 <!-- Template Javascript -->
-
 <script src="js/main.js"></script>
 </body>
 </html>
