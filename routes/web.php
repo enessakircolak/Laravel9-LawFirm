@@ -45,14 +45,14 @@ Route::view('/loginBlank','home.loginBlank');
 //try
 
 //admin
-//Route::get('/admin', [AdminHomeController::class,'index'])->name('adminhome')->middleware('auth')
-Route::get('/admin', [AdminHomeController::class,'index'])->name('adminhome');
+Route::get('/admin', [AdminHomeController::class,'index'])->name('adminhome')->middleware('auth');
+//Route::get('/admin', [AdminHomeController::class,'index'])->name('adminhome');
 
 Route::get('/admin/login', [AdminHomeController::class, 'login'])->name('admin_login');
 Route::post('/admin/logincheck', [AdminHomeController::class, 'logincheck'])->name('admin_logincheck');
 Route::get('/admin/logout', [AdminHomeController::class, 'logout'])->name('admin_logout');
 
-//Route::middleware('auth')->prefix('admin')->group(function () {
+Route::middleware('auth')->prefix('admin')->group(function () {
 // admin category
 
 Route::get('/admin/category', [AdminCategoryController::class,'index'])->name('admin_category');
@@ -95,7 +95,7 @@ Route::prefix('/admin')->name('admin.')->group(function (){
 
         Route::get('/setting',[AdminHomeController::class,'setting'])->name('setting');
 });
-//});
+});
 
 
     Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
